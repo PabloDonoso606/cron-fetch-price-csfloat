@@ -2,6 +2,9 @@ name: cron-fetch-price-csfloat-v2
 on:
   schedule:
     - cron: "*/10 * * * *"
+permissions:
+  contents: read
+  actions: read
 jobs:
   run-task:
     runs-on: ubuntu-latest
