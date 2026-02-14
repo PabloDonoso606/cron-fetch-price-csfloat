@@ -1,7 +1,7 @@
 name: cron-fetch-price-csfloat-v2
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/10 * * * *"
 jobs:
   run-task:
     runs-on: ubuntu-latest
