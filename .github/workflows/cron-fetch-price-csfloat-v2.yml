@@ -1,4 +1,5 @@
 name: cron-fetch-price-csfloat-v2
+
 on:
   schedule:
     - cron: "*/10 * * * *"
