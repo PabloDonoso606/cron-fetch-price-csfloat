@@ -1,4 +1,4 @@
-name: cron-fetch-price-csfloat
+name: cron-fetch-price-csfloat-v2
 
 on:
   schedule:
