@@ -1,5 +1,8 @@
 import { supabase } from "./lib/supabase.js";
 import "dotenv/config";
+
+const CSFLOAT_API_KEY = process.env.CSFLOAT_API_KEY;
+
 interface RateLimitInfo {
   limit: number;
   remaining: number;
@@ -28,7 +31,7 @@ async function fetchPriceFromAPI(url: string) {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "d5Nwb28OTqQEFeluXnYXO4IxtRFMSpSG",
+        Authorization: `${CSFLOAT_API_KEY}`,
       },
     });
 
