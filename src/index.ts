@@ -71,7 +71,7 @@ async function updateAllCsFloatPrice() {
   try {
     const details = await getItemToUpdate();
 
-    for (let i = 0; i < Math.min(details.length, 2); i++) {
+    for (let i = 0; i < Math.min(details.length, 190); i++) {
       const detail = details[i];
       const { price: apiPrice, rateLimit } = await fetchPriceFromAPI(
         detail.csfloat_api_url,
@@ -89,7 +89,7 @@ async function updateAllCsFloatPrice() {
       if (i < details.length - 1 && rateLimit) {
         const timeUntilReset = rateLimit.reset * 1000 - Date.now();
         const optimalDelay = Math.ceil(timeUntilReset / rateLimit.remaining);
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 500));
       }
     }
   } catch (error) {}
