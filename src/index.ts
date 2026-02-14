@@ -89,7 +89,7 @@ async function updateAllCsFloatPrice() {
       if (i < details.length - 1 && rateLimit) {
         const timeUntilReset = rateLimit.reset * 1000 - Date.now();
         const optimalDelay = Math.ceil(timeUntilReset / rateLimit.remaining);
-        await new Promise((resolve) => setTimeout(resolve, 500));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
       }
     }
   } catch (error) {}
